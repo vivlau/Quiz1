@@ -1,0 +1,97 @@
+<%- include('partials/header') %>
+
+<%# Counter for number of tweets%>
+<% let counter = 0; %>
+<% for (let i = 0; i < tweets.length; i++) { %>
+  <% counter += 1; %>
+<% } %>
+
+<%# header stuff%>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="padding-left:0px;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img id="logo" src="images/flower.jpg" width="50px"/></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-right: 0px;">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%# Sidebar stuff%>
+<div class="sidebar hidden-xs hidden-sm col-md-4 col-lg-3 col-xl-4">
+  <div class="userContainer">
+    <img id="userAvatar" src="images/flower.jpg" width="100px"/><div class="userInfo">
+      <h2>Full Name</h2>
+      <h4>@username</h4>
+    </div>
+    <div class="userText">
+      <h4>Messages: <%= counter %></h4>
+    </div>
+  </div>
+  <div class="hashtagTitle">
+    <h3>Trending AweTweets</h3>
+  </div>
+  <div class="userContainer">
+    <ul name="hashtags">
+      <li>#Things</li>
+      <li>#WinterIsHer</li>
+      <li>#TumpIsALump</li>
+      <li>#BetterGetThatCheckedUSA</li>
+      <li>#Node8inApril</li>
+      <li>#EllenGaveEverybodyAThing</li>
+    </ul>
+  </div>
+</div>
+
+<%# Body stuff%>
+<div class="container col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9" id="aoeu">
+  <%# Form%>
+  <div class="containerForm">
+    <form method="post">
+      <div class="tweetForm">
+        <div id="titleId" class="form-group row">
+          <input name="title" type="text" class="form-control" id="inputUserName" placeholder="Username">
+        </div>
+        <div class="form-group row">
+          <textarea name="content" class="form-control" rows="5" id="tweet" placeholder="Tweet"></textarea>
+        </div>
+        <div class="submitButton">
+          <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <%# Post tweets from database%>
+  <div>
+    <% for (let i = 0; i < tweets.length; i++) { %>
+      <div class="postedTweet">
+        <div style="display: table-cell">
+          <img class="tweetLogo" src="images/flower.jpg" width="50px"/>
+        </div>
+        <div style="display: table-cell">
+          <h4><%= tweets[i].title %></h4>
+          <%= tweets[i].content %>
+        </div>
+        <!-- Database has a column that takes timestamp when row is created -->
+        <div class="tweetDate">
+          <strong>Posted:</strong> <%= tweets[i].time %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

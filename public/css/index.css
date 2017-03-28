@@ -1,0 +1,115 @@
+body {
+  color: white;
+  font-family: "Open Sans";
+  background-image: url("../images/asanoha.jpg");
+}
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url('images/Lonely-Blue.jpg') no-repeat;
+  background-size: cover;
+}
+ul {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+textarea {
+  resize: none;
+}
+.titlebox {
+  position: relative;
+  top: 40vh;
+  text-align: center;
+  color: white;
+}
+.navbar-header {
+  height: 60px;
+}
+#logo {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -5px;
+}
+/*sidebar*/
+.sidebar {
+  height: 100vh;
+  padding-right: 20px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+#userAvatar {
+  display: inline;
+  margin: 10px 10px 0px 5px;
+}
+.userInfo {
+  display: inline-block;
+  position: absolute;
+  margin: 0px;
+}
+.userText {
+  padding: 10px 0px 10px 5px;
+}
+.userContainer {
+  background-color: whitesmoke;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px lightgrey;
+}
+/*body*/
+.container {
+  position: relative;
+  box-sizing: border-box;
+}
+.containerForm {
+  background-color: lightblue;
+  margin: 10px 20px 30px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px lightgrey;
+  box-sizing: border-box;
+}
+.tweetForm {
+  padding: 15px;
+  box-sizing: border-box;
+}
+.submitButton {
+  position: relative;
+  text-align: right;
+  right: -14px;
+}
+.postedTweet {
+  background-color: white;
+  margin: 15px 20px 15px 0px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px lightgrey;
+  box-sizing: border-box;
+}
+.tweetDate {
+  margin: 10px 0px 20px 0px;
+  text-align: right;
+}
+.hashtagTitle {
+  padding: 20px 0px 0px 10px;
+  color: grey;
+}
+li {
+  list-style: none;
+  font-size: 18px;
+}
+.tweetLogo {
+  margin: 15px 15px 0px 0px;
+}
+#titleId {
+  max-width: 250px;
+}
